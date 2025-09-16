@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalyst - Text Chat</title>
+  <link rel="stylesheet" href="/static/style/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="/static/js/text-chat.js" type="module"></script>
+</head>
+<body>
+  <main id="chatAppContainer" class="chat-app-container">
+    <div id="chatContainer" class="chat-container">
+      <header class="app-header"> <h1>Catalyst (In-Meeting Mode)</h1>
+      </header>
+      
+      <div id="messages" class="messages"></div>
+
+      <footer class="app-footer"> <form id="messageForm" class="message-form">
+          <div class="input-container" style="flex-grow: 1;"> <label for="message" class="hidden">Enter your message</label> <input type="text" id="message" name="message" class="message-input" placeholder="Ask for product data..." autocomplete="off" />
+          </div>
+          <button type="submit" id="sendButton" class="icon-button" aria-label="Send Message">
+            <span class="material-symbols-outlined">send</span>
+          </button>
+        </form>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
