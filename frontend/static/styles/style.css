@@ -1,0 +1,228 @@
+/* style.css: Refactored and simplified styles for the Henkel Catalyst Assistant */
+
+:root {
+    --henkel-red: #e60000;
+    --henkel-red-dark: #b80000;
+    --background-color: #f4f5f7;
+    --surface-color: #ffffff;
+    --text-color: #333333;
+    --agent-message-bg: #e9ecef;
+    --user-message-bg: var(--henkel-red);
+    --user-message-text: #ffffff;
+    --border-color: #dee2e6;
+    --font-family: 'Roboto', sans-serif;
+    --border-radius: 12px;
+    --dev-log-bg: #2a2a2e;
+    --dev-log-text: #d4d4d4;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-color);
+}
+
+.chat-app-container {
+    width: 100%;
+    max-width: 600px;
+    height: 90vh;
+    max-height: 800px;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Header & Dev Mode Toggle --- */
+.app-header {
+    padding: 12px 20px;
+    background-color: var(--henkel-red);
+    color: var(--surface-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+.switch input { display: none; }
+.slider {
+    position: absolute; cursor: pointer; inset: 0;
+    background-color: #ccc; transition: .4s; border-radius: 22px;
+}
+.slider:before {
+    position: absolute; content: ""; height: 16px; width: 16px;
+    left: 3px; bottom: 3px; background-color: white;
+    transition: .4s; border-radius: 50%;
+}
+input:checked + .slider { background-color: #f7cccc; }
+input:checked + .slider:before { transform: translateX(18px); }
+
+
+/* --- Messages Area --- */
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message-wrapper {
+    display: flex;
+    max-width: 80%;
+}
+
+.agent-wrapper {
+    justify-content: flex-start;
+}
+
+.user-wrapper {
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+p.agent-message, p.user-message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+p.agent-message {
+    background-color: var(--agent-message-bg);
+    color: var(--text-color);
+    border-bottom-left-radius: 4px;
+}
+
+p.user-message {
+    background-color: var(--user-message-bg);
+    color: var(--user-message-text);
+    border-bottom-right-radius: 4px;
+}
+
+/* --- Dev Log Message Style --- */
+pre.dev-log-entry {
+    background-color: var(--dev-log-bg);
+    color: var(--dev-log-text);
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+/* --- Footer & Input Form --- */
+.app-footer {
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    flex-shrink: 0;
+}
+
+.connection-status {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-bottom: 8px;
+    height: 1em;
+}
+.connection-status.disconnected { color: #6c757d; }
+.connection-status.connecting { color: #ffc107; }
+.connection-status.connected { color: #28a745; }
+.connection-status.error { color: #dc3545; }
+
+.message-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-input {
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    outline: none;
+}
+.message-input:focus {
+    border-color: var(--henkel-red);
+    box-shadow: 0 0 0 2px rgba(230, 0, 0, 0.2);
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    transition: background-color 0.2s;
+}
+.icon-button:hover:not(:disabled) {
+    background-color: var(--agent-message-bg);
+}
+.icon-button:disabled {
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+#sendButton {
+    background-color: var(--henkel-red);
+    color: white;
+}
+#sendButton:hover:not(:disabled) {
+    background-color: var(--henkel-red-dark);
+}
+#sendButton:disabled {
+    background-color: #f3a0a0;
+}
+#sendButton .material-symbols-outlined {
+    color: white;
+}
+
+#stopAudioButton {
+    color: var(--henkel-red);
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+}
+
+.hidden {
+    display: none;
+}
