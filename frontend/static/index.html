@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henkel Sales Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<script src="/static/js/app.js" type="module" defer></script>
+<link rel="stylesheet" href="/static/styles/indexstyle.css" />
+<script type="importmap">
+{
+"imports": {
+"react": "https://aistudiocdn.com/react@^19.1.1",
+"react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+"react/": "https://aistudiocdn.com/react@^19.1.1/"
+}
+}
+</script>
+</head>
+
+
+
+
+<body>
+<div class="app-layout">
+ <header class="app-header">
+   <div class="logo">
+     <img src="static/images/henkelimage.png" alt="henkelimage" />
+   </div>
+   <nav class="app-nav">
+     <a id="nav-dashboard" class="active">Dashboard</a>
+     <a id="sales-assistant" style="margin-right:30px">Locti Sales assistant </a>
+   </nav>
+   <div class="user-profile">
+     <span class="material-symbols-outlined">notifications</span>
+     <img src="static/images/alex.jpeg" alt="User Avatar">
+   </div>
+ </header>
+ <main class="dashboard-content">
+   <div id="landing-page-view">
+     <div class="welcome-header">
+       <h1>Good Morning, Alex</h1>
+     </div>
+     <div class="dashboard-column">
+       <div id="card-sales-row" class="card-sales-row">
+         <div class="card sales-funnel-card" style="height:531px;">
+           <h2>Sales Funnel</h2>
+           <div>
+             <br>
+             <h4>Current Quarter Performance</h4>
+             <br>
+           </div>
+           <div class="funnel-data">
+             <p>Target:</p>
+             <p style="padding-right: 18px;"><b>€2.5M</b></p>
+             <p>Unmet Target:</p>
+             <p style="padding-right: 10px;"><b>€1.1M</b></p>
+           </div>
+           <div class="funnel-data">
+             <p>Won:</p>
+             <p style="padding-right: 7px;"><b>€1.4M</b></p>
+             <p>Open Funnel:</p>
+             <p><b>€2.1M</b></p>
+           </div>
+           <div class="funnel-chart-container">
+             <svg class="funnel-svg" width="100%" viewBox="0 0 300 246" preserveAspectRatio="xMidYMid meet">
+               <g class="funnel-stage" aria-label="Prospecting stage">
+                 <polygon points="0,0 200,0 180,46 20,46" fill="#4472c4" />
+                 <text class="funnel-label" x="210" y="26" text-anchor="start">Prospecting</text>
+                 <text class="funnel-label" x="210" y="40" text-anchor="start">€815,000</text>
+               </g>
+               <g class="funnel-stage" aria-label="Qualification stage">
+                 <polygon points="20,50 180,50 160,96 40,96" fill="#ed7d31" />
+                 <text class="funnel-label" x="210" y="76" text-anchor="start">Qualification</text>
+                 <text class="funnel-label" x="210" y="90" text-anchor="start">€640,000</text>
+               </g>
+               <g class="funnel-stage" aria-label="Proposal stage">
+                 <polygon points="40,100 160,100 140,146 60,146" fill="#a5a5a5" />
+                 <text class="funnel-label" x="210" y="126" text-anchor="start">Proposal</text>
+                 <text class="funnel-label" x="210" y="140" text-anchor="start">€300,000</text>
+               </g>
+               <g class="funnel-stage" aria-label="Negotiation stage">
+                 <polygon points="60,150 140,150 120,196 80,196" fill="#ffc000" />
+                 <text class="funnel-label" x="210" y="176" text-anchor="start">Negotiation</text>
+                 <text class="funnel-label" x="210" y="190" text-anchor="start">€195,000</text>
+               </g>
+               <g class="funnel-stage" aria-label="Closed Won stage">
+                 <polygon points="80,200 120,200 110,246 90,246" fill="#70ad47" />
+                 <text class="funnel-label" x="210" y="226" text-anchor="start">Closed Won</text>
+                 <text class="funnel-label" x="210" y="240" text-anchor="start">€1,400,000</text>
+               </g>
+             </svg>
+           </div>
+         </div>
+         <div class="card meetings-card" style="height:531px;">
+           <h2>CRM Meetings</h2>
+           <div class="meetings-layout">
+             <div class="calendar">
+               <div class="calendar-header">
+                 <button><span class="material-symbols-outlined">chevron_left</span></button>
+                 <span>September 2025</span>
+                 <button><span class="material-symbols-outlined">chevron_right</span></button>
+               </div>
+               <div class="calendar-grid">
+                 <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                 <span>1</span><span>2</span><span>3</span><span>4</span><span
+                   class="day-active">5</span><span>6</span><span>7</span>
+                 <span>8</span><span class="day-event">9</span><span>10</span><span>11</span><span>12</span><span
+                   class="day-event">13</span><span>14</span>
+                 <span>15</span><span>16</span><span>17</span><span
+                   class="day-event">18</span><span>19</span><span>20</span><span>21</span>
+               </div>
+             </div>
+             <div class="meetings-list">
+               <div class="meetings-group">
+                 <h3>Today</h3>
+                 <div class="meeting-item" style="--timeline-color: #34D399;">
+                   <p><strong>9 – 10AM</strong></p>
+                   <p style="width:200px;">Meeting with Volta Motors</p>
+                 </div>
+                 <div class="meeting-item" style="--timeline-color: #60A5FA;">
+                   <p><strong>1 – 2:30PM</strong></p>
+                   <p>Application Trials</p>
+                 </div>
+                 <h3>Upcoming</h3>
+                 <div class="meeting-item" style="--timeline-color: #FBBF24;">
+                   <p><strong>3 – 4PM</strong></p>
+                   <p>Dakar Corp. Meeting</p>
+                 </div>
+                 <div class="meeting-item" style="--timeline-color: #A78BFA;">
+                   <p><strong>4 – 5PM</strong></p>
+                   <p>Meeting with Mark Barri</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="card" style="height:531px;">
+           <h2><span class="fire-icon">🔥</span>Hot Leads</h2>
+           <table class="data-table leads-table">
+             <thead>
+               <tr>
+                 <th style="width:160px">Lead</th>
+                 <th style="width:169px;">Company</th>
+                 <th>Status</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Jean-Pierre Leduc
+                   <div class="company-details">Principal Materials & Process Engineer</div>
+                 </td>
+                 <td>
+                   <div>Solis Energy BV</div>
+                   <div class="company-details">High interest in sustainable adhesives</div>
+                 </td>
+                 <td><span class="status-tag contacted">Contacted</span></td>
+               </tr>
+               <tr>
+                 <td>Mark van der Berg
+                   <div class="company-details">Head of Operations</div>
+                 </td>
+                 <td>
+                   <div>Groupe Alpin Alimentaire S.A.</div>
+                   <div class="company-details">Urgent need for bio-based materials</div>
+                 </td>
+                 <td><span class="status-tag qualified">Qualified</span></td>
+               </tr>
+               <tr>
+                 <td>Annelies de Vries
+                   <div class="company-details">Plant Manager</div>
+                 </td>
+                 <td>
+                   <div>Fabbrica Elettrodomestici Milano S.p.A.</div>
+                 </td>
+                 <td><span class="status-tag new">New</span></td>
+               </tr>
+               <tr>
+                 <td>Agnieszka Nowak
+                   <div class="company-details">Category Manager, Chemicals</div>
+                 </td>
+                 <td>
+                   <div>Polski Meblarz Sp. z o.o.</div>
+                 </td>
+                 <td><span class="status-tag new">New</span></td>
+               </tr>
+               <tr>
+                 <td>David Wilson
+                   <div class="company-details">Head of Technical Specification</div>
+                 </td>
+                 <td>
+                   <div>EuroPak Logistics GmbH</div>
+                 </td>
+                 <td><span class="status-tag new">New</span></td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+       <div id="cardtoprow" class="cardtoprow">
+         <div class="card" style="height:585px;">
+           <h2>Top Opportunities</h2>
+           <table class="data-table">
+             <thead>
+               <tr>
+                 <th>Customer</th>
+                 <th>Value</th>
+                 <th>Close Date</th>
+                 <th>Stage</th>
+                 <th style="width:225px;">Key Contact</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>European Aerospace Consortium</td>
+                 <td>€175000</td>
+                 <td>15-Sep-2026</td>
+                 <td><span class="status-tag negotiation">Negotiation</span></td>
+                 <td>Klaus Schmidt, Head of E-Mobility Engineering</td>
+               </tr>
+               <tr>
+                 <td>Vértice Eletrónica, S.A.</td>
+                 <td>€140000</td>
+                 <td>18-Sep-2025</td>
+                 <td><span class="status-tag proposal">Proposal</span></td>
+                 <td>Sofia Costa, Senior Sourcing Manager</td>
+               </tr>
+               <tr>
+                 <td>Bavarian Automotive Systems GmbH</td>
+                 <td>€95000</td>
+                 <td>18-Sep-2025</td>
+                 <td><span class="status-tag proposal">Proposal</span></td>
+                 <td>Dr. Hélène Dubois, Packaging Innovation Lead</td>
+               </tr>
+               <tr>
+                 <td>Britannia Modular Construction Ltd.</td>
+                 <td>€80000</td>
+                 <td>10-Sep-2025</td>
+                 <td><span class="status-tag qualification">Qualification</span></td>
+                 <td>Lars Gustafsson, R&D Manager, Medical Devices</td>
+               </tr>
+               <tr>
+                 <td>Nordic MedTech AB</td>
+                 <td>€75000</td>
+                 <td>22-Sep-2025</td>
+                 <td><span class="status-tag negotiation">Negotiation</span></td>
+                 <td>Isabella Rossi, Lead Product Engineer, Refrigeration</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+         <div class="card">
+           <h2>
+             <span class="material-symbols-outlined" style="color: var(--blue-accent);">list_alt</span>
+             Personalized To-Do List
+           </h2>
+           <div class="todo-list">
+             <div class="todo-item">
+               <input type="checkbox" id="todo1" class="todo-checkbox">
+               <div class="todo-content">
+                 <label for="todo1" class="todo-title">Secure the Deal</label>
+                 <p class="todo-due">Due: 9/5/2025</p>
+                 <p class="todo-description">Draft and send the official contract to Isabella Rossi at Fabbrica
+                   Elettrodomestici Milano (OPP-0955) to formalize last week's verbal agreement. Aim to get it signed
+                   by Friday (Sep 5) to close the deal this month.</p>
+               </div>
+             </div>
+             <div class="todo-item">
+               <input type="checkbox" id="todo2" class="todo-checkbox">
+               <div class="todo-content">
+                 <label for="todo2" class="todo-title">Advance the Negotiation</label>
+                 <p class="todo-due">Due: 9/8/2025</p>
+                 <p class="todo-description">Follow up with Sofia Costa at Vértice Eletrónica (OPP-0952) on the
+                   proposal sent for the display lamination project. Prepare to discuss our local technical support
+                   as a key advantage over their current supplier.</p>
+               </div>
+             </div>
+             <div class="todo-item">
+               <input type="checkbox" id="todo4" class="todo-checkbox">
+               <div class="todo-content">
+                 <label for="todo4" class="todo-title">Plan for a Successful Trial</label>
+                 <p class="todo-due">Due: 9/12/2025</p>
+                 <p class="todo-description">Coordinate logistics with the application engineering team for the
+                   upcoming line trial at Solis Energy (OPP-0958). Confirm product and equipment are on schedule and
+                   send a pre-trial agenda to Annelies de Vries.
+                 </p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div id="details-page-view" style="display: none;">
+     <div class="card-details">
+       <div class="details-page">
+         <div class="header">
+           <h2>Details</h2>
+           <span class="icon">✨</span>
+         </div>
+         <div class="details-table">
+           <div class="table-row header-row">
+             <div class="feature-title">Feature</div>
+             <div class="product-name">Loctite ESB 5100</div>
+             <div class="product-name">Competitors</div>
+           </div>
+           <div class="table-row">
+             <div class="feature">Core Technology</div>
+             <div class="value blue-text">Butyl-based, non-reactive hot-melt</div>
+             <div class="value blue-text">Mostly Silyl-terminated polymer or Silicone based</div>
+           </div>
+           <div class="table-row">
+             <div class="feature">Serviceability (for Repair)</div>
+             <div class="value blue-text">Excellent (Designed for easy removal and resealing)</div>
+             <div class="value blue-text">Limited (Foams can tear; other sealants may require scraping or full
+               re-application)</div>
+           </div>
+           <div class="table-row">
+             <div class="feature">Self-Healing Capability</div>
+             <div class="value blue-text">Yes (Actively maintains seal during vibration and movement)</div>
+             <div class="value blue-text">Typically No (Standard seals can be compromised by movement)</div>
+           </div>
+           <div class="table-row">
+             <div class="feature">Processing Speed</div>
+             <div class="value blue-text">Fast (Immediate handling strength after cooling)</div>
+             <div class="value blue-text">Slower (Requires significant time for chemical curing)</div>
+           </div>
+           <div class="table-row">
+             <div class="feature">Environmental Protection</div>
+             <div class="value blue-text">Superior (vibration, dust, water)</div>
+             <div class="value blue-text">Moderate</div>
+           </div>
+         </div>
+         <div class="availability-status">
+           <h3>Availability Status</h3>
+           <div class="availability-grid">
+             <div class="grid-item">
+               <div class="label">Current Availability</div>
+               <div class="value-large">Available</div>
+             </div>
+             <div class="grid-item">
+               <div class="label">Lead Time</div>
+               <div class="value-large">2 Weeks</div>
+             </div>
+             <div class="grid-item" style="padding-left: 67px;">
+               <div class="label">Initial Stock (Regional DC)</div>
+               <div class="value-large">500 Cartridges</div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div id="customer-360-view" style="display: none;">
+     <div class="card-customer360">
+       <div class="briefing-header">
+         <h2>Briefing - Volta Motors</h2>
+         <div class="header-icon">
+           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M9.625 2.75L13.25 6.375" stroke="#596780" stroke-width="1.5" stroke-miterlimit="10"
+               stroke-linecap="round" stroke-linejoin="round" />
+             <path
+               d="M2.75 11.7502V8.8752C2.75 8.5002 3 8.00019 3.25 7.75019L10.375 0.625195C11.0013 0.00143125 12.0013 0.00143125 12.625 0.625195L15.375 3.3752C16.0013 4.00144 16.0013 5.00144 15.375 5.6252L8.25 12.7502C8 13.0002 7.5 13.2502 7.125 13.2502H4.25C3.4175 13.2502 2.75 12.5827 2.75 11.7502Z"
+               stroke="#596780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+             <path d="M7.375 3.625L12.375 8.625" stroke="#596780" stroke-width="1.5" stroke-miterlimit="10"
+               stroke-linecap="round" stroke-linejoin="round" />
+           </svg>
+         </div>
+       </div>
+       <div class="briefing-content">
+         <div class="customer-360">
+           <img src="static/images/customer360.svg" alt="customer360image" />
+           <h3>Volta Motors</h3>
+           <p>Enterprise Account, Automotive Division</p>
+         </div>
+         <div class="account-details">
+           <div class="detail-item">
+             <span>Account Size</span>
+             <strong>Large</strong>
+           </div>
+           <div class="detail-item">
+             <span>Account Type</span>
+             <strong>Enterprise</strong>
+           </div>
+           <div class="detail-item">
+             <span>Annual Revenue</span>
+             <strong>€24.5B</strong>
+           </div>
+           <div class="detail-item">
+             <span>Primary Products</span>
+             <strong>Adhesives, Sealants</strong>
+           </div>
+         </div>
+         <div class="contacts">
+           <div class="contact-person">
+             <img src="static/images/David.png" alt="David Chen">
+             <div>
+               <strong>David Chen</strong>
+               <span>Lead Materials Engineer</span>
+             </div>
+           </div>
+           <div class="contact-person">
+             <img src="static/images/maria.jpeg" alt="Maria Rodriguez">
+             <div>
+               <strong>Maria Rodriguez</strong>
+               <span>Senior Procurement Manager</span>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="main-content">
+         <div class="recent-orders" style="width:700px; height:250px">
+           <h3>Recent Orders</h3>
+           <table>
+             <thead>
+               <tr>
+                 <th>Order Number</th>
+                 <th style="width:130px;">Product</th>
+                 <th>Order Date</th>
+                 <th>Delivery date</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>ORD-88654</td>
+                 <td>Teroson EP 5055, General Purpose Structural Adhesive (50ml Cartridge)</td>
+                 <td>24-Feb-2025</td>
+                 <td>10-Mar- 2025</td>
+               </tr>
+               <tr>
+                 <td>ORD-88501</td>
+                 <td>Bonderite C-IC 33, Acidic Cleaner for Aluminum (200L Drum)</td>
+                 <td>28-Jan-2025</td>
+                 <td>14-Feb- 2025</td>
+               </tr>
+               <tr>
+                 <td>ORD-88351</td>
+                 <td>Technomelt DM 5560, Interior Lamination Hot Melt (20kg Bag)</td>
+                 <td>22-Nov-2024</td>
+                 <td>08-Dec-2024</td>
+               </tr>
+               <tr>
+                 <td>ORD-88194</td>
+                 <td>Loctite AA 330, Magnet Bonding Adhesive (1L Bottle)</td>
+                 <td>15-Sep-2024</td>
+                 <td>30-Sep-2024</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+         <div class="opportunity-history" style="width:700px; margin-left:-700px">
+           <h3>Opportunity History</h3>
+           <table>
+             <thead>
+               <tr>
+                 <th style="width:165px;">Product</th>
+                 <th style="width:200px;">Application Area</th>
+                 <th>Value</th>
+                 <th>Status</th>
+                 <th style="width:100px;">Close Date</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Gasketing Solution / Bergquist Gap Filler</td>
+                 <td>Battery Manufacturing</td>
+                 <td>€150,000</td>
+                 <td><span class="status negotiating">Qualification</span></td>
+                 <td>15-Sep-2025</td>
+               </tr>
+               <tr>
+                 <td style="padding-top: 29px;">Teroson EP / Loctite EA</td>
+                 <td>Body-in-White (BIW)</td>
+                 <td>€200,000</td>
+                 <td><span class="status open">Prospecting</span></td>
+                 <td>31-Jan-2026</td>
+               </tr>
+               <tr>
+                 <td style="padding-top: 29px;">Technomelt DM</td>
+                 <td>Final Assembly (Interior)</td>
+                 <td>€120,000</td>
+                 <td><span class="status open">Prospecting</span></td>
+                 <td>30-Nov-2025</td>
+               </tr>
+               <tr>
+                 <td style="padding-top: 29px;">Loctite AA</td>
+                 <td>Powertrain (E-Motor)</td>
+                 <td>€250,000</td>
+                 <td><span class="status negotiating">Qualification</span></td>
+                 <td>15-Dec-2025</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+         <div class="card-body" style="display:flex;flex-direction: row;margin-top:2%">
+           <div class="insights-container">
+             <div class="insight-card-large">
+               <h4 class="insight-title">Leads & Customer Inquiries</h4>
+               <ul class="inquiry-list">
+                 <li>
+                   <span class="inquiry-type download">Web Asset Download</span>
+                   <span class="inquiry-details"
+                     style="padding-left: 3px;">"brochure-henkel-solutions-emobility.pdf"</span>
+                   <span class="inquiry-date">Aug 12, 2025</span>
+                 </li>
+                 <li>
+                   <span class="inquiry-type tradeshow">Tradeshow Booth Visit</span>
+                   <span class="inquiry-details">Advanced Manufacturing Expo - Interest in automated
+                     gasketing.</span>
+                   <span class="inquiry-date">Jul 28, 2025</span>
+                 </li>
+                 <li>
+                   <span class="inquiry-type inquiry">Direct Inquiry</span>
+                   <span class="inquiry-details" style="padding-left: 30px;">Question about lead times for Teroson EP
+                     5055</span>
+                   <span class="inquiry-date">Jun 30, 2025</span>
+                 </li>
+               </ul>
+             </div>
+           </div>
+           <div class="insights-container">
+             <div class="insight-card-large">
+               <div class="card-header">
+                 <h4 class="insight-title">Interaction History</h4>
+                 <span class="header-icon">💬</span>
+               </div>
+               <div class="card-body">
+                 <ul class="interaction-list">
+                   <li>
+                     <div class="interaction-header">
+                       <h4 class="interaction-title">Follow-up Call on EV Gasketing</h4>
+                       <span class="interaction-date">Aug 1, 2025</span>
+                     </div>
+                     <p class="interaction-note" style="color: #4a5568;font-size: 14px;">Discussed pain points
+                       regarding manual gasket application speed
+                       and
+                       consistency. Customer is very interested in the automation potential of Loctite ESB 5100.
+                       Sent
+                       over the automation case study.</p>
+                   </li>
+                   <br>
+                   <li>
+                     <div class="interaction-header">
+                       <h4 class="interaction-title">Initial Discovery Call</h4>
+                       <span class="interaction-date">May 20, 2025</span>
+                     </div>
+                     <p class="interaction-note" style="color: #4a5568;font-size: 14px;">Customer is looking to
+                       replace their typical foam gaskets to
+                       improve
+                       sealing rating from IP65 to IP67 for a new product line. Budget and processing time are
+                       key
+                       concerns.</p>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+           <div class="insights-container">
+             <div class="insight-card-large">
+               <div class="card-header">
+                 <h4 class="insight-title">Support Tickets</h4>
+               </div>
+               <div class="card-body">
+                 <ul class="ticket-list">
+                   <li>
+                     <span class="ticket-status open">Open</span>
+                     <div class="ticket-details">
+                       <p class="ticket-subject">Requesting updated safety data sheet (SDS) for Loctite SI 5970
+                       </p>
+                       <span class="ticket-id">Ticket #86753</span>
+                     </div>
+                     <span class="ticket-date">Aug 15, 2025</span>
+                   </li>
+                   <li>
+                     <span class="ticket-status closed">Closed</span>
+                     <div class="ticket-details">
+                       <p class="ticket-subject">Query on substrate compatibility for Loctite SI 5486 with treated aluminum</p>
+                       <span class="ticket-id">Ticket #86749</span>
+                     </div>
+                     <span class="ticket-date">Jul 5, 2025</span>
+                   </li>
+                   <li>
+                     <span class="ticket-status closed">Closed</span>
+                     <div class="ticket-details">
+                       <p class="ticket-subject">Question about shelf life and storage conditions</p>
+                       <span class="ticket-id">Ticket #86741</span>
+                     </div>
+                     <span class="ticket-date">Apr 11, 2025</span>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div id="email-draft-view" style="display: none;">
+     <div class="card email-draft-card">
+       <div class="email-header">
+         <h2>Email Draft</h2>
+         <span class="material-symbols-outlined">drafts</span>
+       </div>
+       <div class="email-form">
+         <div class="form-group">
+           <label for="email-recipients">Recipients:</label>
+           <input type="email" id="email-recipients" name="recipients"
+             placeholder="e.g., contact@volta.com, m.rodriguez@volta.com">
+         </div>
+         <div class="form-group">
+           <label for="email-subject">Subject:</label>
+           <input type="text" id="email-subject" name="subject"
+             placeholder="Following up on our discussion about Loctite ESB 5100">
+         </div>
+         <div class="form-group">
+           <label>Attachments:</label>
+           <div class="attachments-area">
+             <div id="attachment-list">
+             </div>
+             <button id="add-attachment-btn" class="secondary-button">
+               <span class="material-symbols-outlined" style="font-size: 1.25rem;">attach_file</span>
+               Add Attachment
+             </button>
+           </div>
+         </div>
+         <div class="form-group">
+           <label for="email-body">Body:</label>
+           <textarea id="email-body" name="body" rows="15" placeholder="Dear David,..."></textarea>
+         </div>
+         <div class="email-actions">
+           <button id="send-email-btn" class="primary-button">
+             <span class="material-symbols-outlined">send</span>
+             Send Email
+           </button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+
+
+
+
+   <div id="meeting-recap-view" style="display: none;">
+     <div class="card" style="padding: 24px; font-family: 'Inter', sans-serif; color: #333;">
+       <div class="recap-header"
+         style="display: flex; align-items: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 16px; margin-bottom: 16px;">
+         <span class="material-symbols-outlined"
+           style="color: var(--blue-accent); margin-right: 12px; font-size: 28px;">rebase</span>
+         <h2 id="recap-title" style="font-size: 20px; font-weight: 600; margin: 0;">Meeting Recap</h2>
+       </div>
+       <div class="recap-body">
+         <div class="recap-section" style="margin-bottom: 20px;">
+           <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Attendees</h3>
+           <p id="recap-attendees" style="font-size: 14px; margin: 0; color: #555;"></p>
+         </div>
+         <div class="recap-section" style="margin-bottom: 20px;">
+           <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Key Discussion Points 💬</h3>
+           <ul id="recap-discussion-points"
+             style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px; color: #555; line-height: 1.6;">
+           </ul>
+         </div>
+         <div class="recap-section" style="margin-bottom: 20px;">
+           <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Action Items ✅</h3>
+           <ul id="recap-action-items"
+             style="list-style-type: none; margin: 0; padding: 0; font-size: 14px; color: #555;">
+           </ul>
+         </div>
+         <div id="follow-up-section" class="recap-section" style="margin-bottom: 20px; display: none;">
+           <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Follow-Up Due 🗓️</h3>
+           <p id="recap-follow-up-date" style="font-size: 14px; margin: 0; color: #555;"></p>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+
+
+
+
+   <div id="meeting-invite-view" style="display: none;">
+<div class="event-card">
+ <div class="card-header">
+   <button class="header-button" aria-label="Menu">
+     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16"></path>
+     </svg>
+   </button>
+   <button class="header-button" aria-label="Close">
+     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+     </svg>
+   </button>
+ </div>
+ <div class="title-input-container">
+   <input type="text" placeholder="Add title" class="title-input" id="invite-title" value="Discuss Trial Results and PO Details" />
+ </div>
+ <div class="tabs-container">
+   <button class="tab-button active">Event</button>
+   <button class="tab-button">Task</button>
+   <button class="tab-button">Out of office</button>
+   <button class="tab-button">Focus time</button>
+   <button class="tab-button">Working location</button>
+   <button class="tab-button">Appointment schedule</button>
+ </div>
+ <div class="card-content">
+   <div class="info-row">
+     <div class="info-row-icon">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+       </svg>
+     </div>
+     <div class="info-row-content">
+       <div class="primary-text">
+         <span id="invite-date"></span>
+         <span id="invite-time"></span>
+       </div>
+       <span id="invite-secondary-text" class="secondary-text"></span>
+     </div>
+   </div>
+   <div class="info-row">
+     <div class="info-row-icon">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+       </svg>
+     </div>
+     <div id="invite-attendees-container" class="info-row-content" style="display: flex; flex-direction: row; gap: 8px; align-items: start; flex-wrap: wrap;">
+       </div>
+   </div>
+   <div class="info-row">
+     <div class="info-row-icon meet-icon">
+       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M13.25 12.5H18.25V7.5L13.25 12.5Z" fill="#00832D" stroke="#00832D" stroke-width="1.5" stroke-linejoin="round"></path>
+         <path d="M5.75 7.5L10.75 12.5H5.75V7.5Z" fill="#0066DA" stroke="#0066DA" stroke-width="1.5" stroke-linejoin="round"></path>
+         <path d="M10.75 12.5L5.75 17.5V12.5H10.75Z" fill="#E94235" stroke="#E94235" stroke-width="1.5" stroke-linejoin="round"></path>
+         <path d="M13.25 12.5L18.25 17.5V12.5H13.25Z" fill="#FFBA00" stroke="#FFBA00" stroke-width="1.5" stroke-linejoin="round"></path>
+         <path d="M5.75 7.5V17.5L10.75 12.5" fill="#2684FC" stroke="#2684FC" stroke-width="1.5" stroke-linejoin="round"></path>
+       </svg>
+     </div>
+     <div class="info-row-content">
+       <span>Add Google Meet video conferencing</span>
+     </div>
+   </div>
+   <div class="info-row">
+     <div class="info-row-icon">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+         <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+       </svg>
+     </div>
+     <div class="info-row-content">
+       <span id="invite-location"></span>
+     </div>
+   </div>
+   <div class="info-row">
+     <div class="info-row-icon">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10"></path>
+       </svg>
+     </div>
+     <div class="info-row-content">
+       <p id="invite-description"></p>
+     </div>
+   </div>
+   <div class="info-row">
+     <div class="info-row-icon">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+       </svg>
+     </div>
+     <div class="info-row-content">
+       <div class="primary-text">
+         <span>Alex Richter</span>
+         <div class="status-dot"></div>
+       </div>
+       <span class="secondary-text">Busy • Default visibility • Notify 10 minutes before</span>
+     </div>
+   </div>
+ </div>
+ <div class="card-footer">
+   <button class="footer-button more-options">More options</button>
+   <button id="save-invite-btn" class="footer-button save">Save</button>
+ </div>
+</div>
+</div>
+
+
+
+
+<!-- Replace the entire "meeting-updated-view" div with this block -->
+<div id="meeting-updated-view" class="meeting-updated-card" style="display: none;">
+  <div class="event-card">
+      <div class="card-header">
+          <button class="header-button" aria-label="Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16"></path>
+              </svg>
+          </button>
+          <button class="header-button" aria-label="Close">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+      </div>
+      <div class="title-input-container">
+          <!-- CHANGED ID HERE -->
+          <input type="text" placeholder="Add title" class="title-input" id="updated-invite-title" value="Discuss Trial Results and PO Details" readonly/>
+      </div>
+      <div class="card-content">
+          <div class="info-row">
+              <div class="info-row-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+              </div>
+              <div class="info-row-content">
+                  <div class="primary-text">
+                      <!-- CHANGED IDs HERE -->
+                      <span id="updated-invite-date"></span>
+                      <span id="updated-invite-time"></span>
+                  </div>
+                  <span id="updated-invite-secondary-text" class="secondary-text"></span>
+              </div>
+          </div>
+          <div class="info-row">
+              <div class="info-row-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  </svg>
+              </div>
+              <!-- CHANGED ID HERE -->
+              <div id="updated-invite-attendees-container" class="info-row-content" style="display: flex; flex-direction: row; gap: 8px; align-items: start; flex-wrap: wrap;">
+              </div>
+          </div>
+          <div class="info-row">
+              <div class="info-row-icon meet-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.25 12.5H18.25V7.5L13.25 12.5Z" fill="#00832D" stroke="#00832D" stroke-width="1.5" stroke-linejoin="round"></path>
+                      <path d="M5.75 7.5L10.75 12.5H5.75V7.5Z" fill="#0066DA" stroke="#0066DA" stroke-width="1.5" stroke-linejoin="round"></path>
+                      <path d="M10.75 12.5L5.75 17.5V12.5H10.75Z" fill="#E94235" stroke="#E94235" stroke-width="1.5" stroke-linejoin="round"></path>
+                      <path d="M13.25 12.5L18.25 17.5V12.5H13.25Z" fill="#FFBA00" stroke="#FFBA00" stroke-width="1.5" stroke-linejoin="round"></path>
+                      <path d="M5.75 7.5V17.5L10.75 12.5" fill="#2684FC" stroke="#2684FC" stroke-width="1.5" stroke-linejoin="round"></path>
+                  </svg>
+              </div>
+              <div class="info-row-content">
+                  <button class="join-button">
+                      Join with Google Meet
+                  </button>
+              </div>
+          </div>
+          <div class="info-row">
+              <div class="info-row-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+              </div>
+              <div class="info-row-content">
+                  <!-- CHANGED ID HERE -->
+                  <span id="updated-invite-location"></span>
+              </div>
+          </div>
+          <div class="info-row">
+              <div class="info-row-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10"></path>
+                  </svg>
+              </div>
+              <div class="info-row-content">
+                  <!-- CHANGED ID HERE -->
+                  <p id="updated-invite-description"></p>
+              </div>
+          </div>
+          <div class="info-row">
+              <div class="info-row-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+              </div>
+              <!-- <div class="info-row-content">
+                  <div class="primary-text">
+                      <span>Alex Richter</span>
+                      <div class="status-dot"></div>
+                  </div>
+                  <span class="secondary-text">Busy • Default visibility • Notify 10 minutes before</span>
+              </div> -->
+          </div>
+      </div>
+  </div>
+</div>
+ </main>
+</div>
+<div id="video-feed-container" class="video-feed-container hidden">
+ <video id="video-feed" autoplay muted playsinline></video>
+</div>
+<div class="floating-actions">
+ <div class="floating-actions-1">
+   <button class="action-btn" id="aiActionsBtn" aria-label="AI Actions">
+     <span class="material-symbols-outlined">support_agent</span>
+   </button>
+   <div class="action-divider"></div>
+   <button class="action-btn" id="openChatBtn" aria-label="Open Chat">
+     <span class="material-symbols-outlined">chat</span>
+   </button>
+ </div>
+ <div class="floating-actions-2">
+   <button class="action-btn" type="button" id="startVideoButton" aria-label="Start Camera">
+     <span class="material-symbols-outlined">videocam</span>
+   </button>
+   <button class="action-btn hidden" type="button" id="stopVideoButton" aria-label="Stop Camera">
+     <span class="material-symbols-outlined">videocam_off</span>
+   </button>
+   <div class="action-divider"></div>
+   <button class="action-btn" type="button" id="startScreenButton" aria-label="Start Screen Share">
+     <span class="material-symbols-outlined">present_to_all</span>
+   </button>
+   <button class="action-btn hidden" type="button" id="stopScreenButton" aria-label="Stop Screen Share">
+     <span class="material-symbols-outlined">cancel_presentation</span>
+   </button>
+ </div>
+</div>
+<main id="chatAppContainer" class="chat-app-container">
+ <div id="chatContainer" class="chat-container">
+   <header class="chat-header">
+     <h1>Locti - Henkel Sales Assistant</h1>
+     <div class="header-controls">
+       <div class="settings-group" style="display:none">
+         <label for="languageSelector">Language:</label>
+         <select id="languageSelector">
+           <option value="en-US">English (US)</option>
+           <option value="es-ES">Español (España)</option>
+           <option value="es-US">Español (US)</option>
+         </select>
+       </div>
+       <div class="settings-group" style="margin-right:83px;display:none">
+         <label for="devModeToggle">Dev Mode:</label>
+         <label class="switch">
+           <input type="checkbox" id="devModeToggle">
+           <span class="slider"></span>
+         </label>
+       </div>
+       <button id="closeChatButton" aria-label="Close Chat">
+         <span class="material-symbols-outlined">close</span>
+       </button>
+     </div>
+   </header>
+   <div id="messages">
+     <div class="message-wrapper agent-wrapper">
+       <p class="agent-message">Hi there! How can I help you today?</p>
+     </div>
+   </div>
+   <div class="bottom-panel">
+     <div id="connectionStatus" class="">Connecting...</div>
+     <form id="messageForm">
+       <button type="button" id="startAudioButton" aria-label="Start Audio Recording" style="display: none;">
+         <span class="material-symbols-outlined">mic</span>
+       </button>
+       <button type="button" id="stopAudioButton" aria-label="Stop Audio Recording" class="hidden">
+         <span class="material-symbols-outlined">stop</span>
+       </button>
+       <div class="input-container">
+         <label for="message">Enter your message</label>
+         <input type="text" id="message" name="message" placeholder="Type your message here..." />
+       </div>
+       <button type="submit" id="sendButton" aria-label="Send Message">
+         <span class="material-symbols-outlined">send</span>
+       </button>
+       <button type="button" id="startVideoButton" aria-label="Start Camera" style="display:none">
+         <span class="material-symbols-outlined">videocam</span>
+       </button>
+       <button type="button" id="stopVideoButton" class="hidden" aria-label="Stop Camera" style="display:none">
+         <span class="material-symbols-outlined">videocam_off</span>
+       </button>
+       <button type="button" id="startScreenButton" aria-label="Start Screen Share" style="display:none">
+         <span class="material-symbols-outlined">present_to_all</span>
+       </button>
+       <button type="button" id="stopScreenButton" class="hidden" aria-label="Stop Screen Share"
+         style="display:none">
+         <span class="material-symbols-outlined">cancel_presentation</span>
+       </button>
+       <input type="file" id="imageUploadInput" accept="image/*" class="hidden" style="display:none" />
+       <button type="button" id="imageUploadButton" aria-label="Upload an Image" style="display:none">
+         <span class="material-symbols-outlined">image</span>
+       </button>
+     </form>
+   </div>
+ </div>
+</main>
+<div id="snackbar"></div>
+</body>
+</html>
