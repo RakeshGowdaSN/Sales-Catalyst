@@ -13,6 +13,7 @@ Sales-Catalyst is a next-generation, hyper-efficient AI sales assistant built ar
 - [Environment Variables](#environment-variables)
 - [Running Locally](#running-locally)
 - [Using Docker](#using-docker)
+- [Deploying with deploy.sh](#deploying-with-deploysh)
 - [Endpoints](#endpoints)
 - [Catalyst Agent Workflow (User Journey)](#catalyst-agent-workflow-user-journey)
 - [What is RAG?](#what-is-rag)
@@ -130,6 +131,21 @@ GCP_BUCKET_NAME='your-gcp-bucket'
 docker build -t sales-catalyst .
 docker run -p 8000:8000 --env-file .env sales-catalyst
 ```
+
+---
+
+## Deploying with deploy.sh
+
+To deploy Sales-Catalyst to a cloud environment (such as Google Cloud Run), use the provided `deploy.sh` script. This script automates the build and deployment process, ensuring all necessary environment variables and containers are configured for production.
+
+**Typical usage:**
+```sh
+./deploy.sh
+```
+
+- Ensure you have set up your cloud credentials and your `.env` file is present with all necessary variables.
+- The script will build the Docker image, push it to your configured container registry, and deploy it to the specified cloud service.
+- Modify `deploy.sh` as needed for your cloud provider or deployment preferences.
 
 ---
 
