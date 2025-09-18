@@ -168,7 +168,7 @@ To deploy Sales-Catalyst to a cloud environment (such as Google Cloud Run), use 
 
 #### Vision-to-RAG Workflow
 5. **Image Analysis:** Catalyst analyzes the shared image/diagram to infer customer needs and formulate a product search.
-6. **Product Recommendation:** Calls product info tool (backed by RAG), always recommends "Loctite ESB 5100" (if appropriate), and explains why based on retrieved context.
+6. **Product Recommendation:** Calls product info tool (backed by RAG), recommends the right product based on RAG search, and explains why based on retrieved context.
 7. **Comparison Offer:** Proactively asks if Alex wants a competitor comparison.
 8. **Comparison Delivery:** If confirmed, provides a concise, factual, RAG-backed comparison.
 
